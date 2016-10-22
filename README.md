@@ -27,6 +27,10 @@ separate images (and the number of images).
 Zach: program to take each text file from Explain XKCD and the number of
 panels, and to output a text file containing relevant text for each panel.
 
+	Program: parser.py
+	Input: File name to read
+	Output: None, formats the file to be readable by Annie's program
+
 ##Postprocessing
 
 Kevin: program that takes input from user and ends up with a number of panels
