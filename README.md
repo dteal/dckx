@@ -15,6 +15,11 @@ Daniel: program to download XKCD images and Explain XKCD text to numbered
 PNG and text files, respectively.
 
 	Program: getxkcd.py
+	Input: (none)
+	Output:
+		image files in /originals/, e.g., dckx/originals/971.png
+		transcript text in /processed/, e.g., dckx/original/971_transcript.txt
+		explanation text in /processed/, e.g., dckx/original/971_explanation.txt
 
 Brian: program to take each png comic and output individual panels as
 separate images (and the number of images).
