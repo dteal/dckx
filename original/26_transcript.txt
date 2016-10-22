@@ -1,8 +1,4 @@
-[[A collection of fictional meat based cereals]]
-Pork Loops
-Mice Krispies
-Hammios
-Frosted Bacon Flakes
-Scrapple Jacks
-Honey Bunches of Goats
-{{Alt: Disgusting}
+[[ Person talks on phone.  Cat with many sharp points looks on. ]]
+Person on phone: Hi, Dr. Elizabeth?  Yeah, uh ... I accidentally took the Fourier transform of my cat ...
+Cat: Meow!
+{{alt-text: That cat has some serious periodic components}}

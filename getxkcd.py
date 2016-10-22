@@ -4,7 +4,7 @@ import requests
 index_filename = 'original/index.txt'
 with open(index_filename, 'w') as index_file:
 
-	for comic_index in range(972):
+	for comic_index in range(124):
 
 		index_file.write(str(comic_index+1)+'\n')
 
@@ -48,11 +48,11 @@ with open(index_filename, 'w') as index_file:
 		transcript = soup.find('div', {'id':'transcript'}).contents
 #		print(transcript)
 
-		filename = 'original/' + str(comic_index) + '.png'
+		filename = 'original/' + str(comic_index+1) + '.png'
 		with open(filename, 'wb') as f:
 			f.write(requests.get(comic_url).content)
 
-		filename = 'original/' + str(comic_index) + '_transcript.txt'
+		filename = 'original/' + str(comic_index+1) + '_transcript.txt'
 		with open(filename, 'w') as f:
 			for line in transcript:
 				f.write(line)

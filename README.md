@@ -19,7 +19,6 @@ PNG and text files, respectively.
 	Output:
 		image files in /originals/, e.g., dckx/originals/971.png
 		transcript text in /originals/, e.g., dckx/original/971_transcript.txt
-		explanation text in /originals/, e.g., dckx/original/971_explanation.txt
 		list of comic numbers in /originals/index.txt
 
 Brian: program to take each png comic and output individual panels as

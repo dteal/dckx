@@ -1,2 +1,3 @@
-In what scientists are calling "pretty gay," I can't find my shoes.
-{{ alt: A leading expert characterized the situation as 'retarded' }}
+Heading: Another from my high-school notebooks.
+[[A sheep and a potted saguaro cactus linked by an arcing yellow electricity bolt, drawn on graph paper]]
+{{title text: I think it's the sheep zapping the cactus and not vice-versa}}

@@ -1,12 +1,5 @@
-[[Two guys stand next to each other talking]]
-A: I just feel like somewhere out there is the girl for me.
-B: Yeah.
-A: Someone loving and caring.
-B: I know what you mean.
-A: A girl whose only mode of transportation is the M.C. Hammer Slide.
-B: Yeah.
-B: ...Wait, what?
-[[A girl hammer slides past]]
-[[A sees girl hammer slide and it's love at first sight]]
-[[Girl hammer slides over into A's waiting arms]]
-{{alt text: Once, long ago, I saw this girl go by. I didn't stop and talk to her, and I've regretted it ever since.}}
+[[A sky full of jumbo jets is shown in movie poster format.]]
+Top of the poster: From the creators of last summer's hit thriller Snakes On a Plane comes:
+Superimposed on the sky and planes:  Snakes...  on EVERY Plane!
+Bottom of the poster: Much worse than last time.
+{{Mouseover text:  James suggested this, and I'd have to agree.  It'd be much worse.}}

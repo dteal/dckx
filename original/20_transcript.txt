@@ -1,4 +1,12 @@
-[[ Two people stand in an aisle in a store ]]
-Person 1: Nice store. How do you keep the floors so clean?
-Person 2: Oh, we hired this dude named Kepler, he's really good hard worker.  Doesn't mind the monotony. Sweeps out the same area every night.
-{{ alt: Science joke. You should probably just move along. }}
+[[A ferret with airplane wings on it]]
+Friend: Why on earth did you make those wings? You don't seriously think they could let your ferret fly, right?
+Guy: I... of course not.
+Guy: That would be pretty dumb. It's just, uh... ...a Halloween costume.
+Friend: oh, okay.
+Friend: Besides, who would want a pet to fly anyway?
+Guy: Yeah. Pretty lame, huh?
+Friend: Anyway, let's go play video games.
+[[Friend leaves]]
+[[Friend is gone, and Guy is looking at ferret]]
+[[Guy imagines ferret flying over the ocean near the beach using his makeshift wings]]
+{{title text: My brother had a ferret he loved which died since I drew this strip. RIP.}}

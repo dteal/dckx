@@ -1,8 +1,5 @@
-Narrator: When self-reference, irony, and meta-humor go too far
-Narrator: A CAUTIONARY TALE
-Man 1: This statement wouldn't be funny if not for irony!
-Man 1: ha ha
-Man 2: ha ha, I guess.
-Narrator: 20,000 years later...
-[[desolate badlands landscape with an imposing sun in the sky]]
-{{It's commonly known that too much perspective can be a downer.}}
+[[A black number 70 sees a red package.]]
+70: hey, a package!
+[[The package explodes with a <<BOOM>> and a red cloud of smoke.]]
+[[There are a red 7, a green 5 and a blue 2 lying near a scorched mark on the floor.]]
+{{alt text: Blown into prime factors}}

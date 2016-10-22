@@ -1,6 +1,3 @@
-[[Picture of a suburban house, with lines pointing to various aspects]]
-High bathroom window: probably secure.
-Outer door: secure.
-picture window: VELOCIRAPTOR ENTRY POINT!
-Narrator: It's been over a decade since Jurassic Park opened, and I still size up buildings for their potential as shelter against velociraptor attacks.
-{{title text: You're probably thinking, 'has it been a decade'? It's been over thirteen years, buddy.}}
+[[Hat Guy is standing on an advancing glacier]]
+Hat Guy: Dear Sony, Microsoft, the MPAA, the RIAA, and Apple: Let's make a deal. You stop trying to tell me where, when, and how I play my movies and music, and I won't crush your homes under my inexorably advancing wall of ice.
+[[Alt text: If you're interested in the subject, Lawrence Lessig's 'Free Culture' is pretty good]]
