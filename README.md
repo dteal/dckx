@@ -19,7 +19,6 @@ PNG and text files, respectively.
 	Output:
 		image files in /originals/, e.g., dckx/originals/971.png
 		transcript text in /originals/, e.g., dckx/original/971_transcript.txt
-		explanation text in /originals/, e.g., dckx/original/971_explanation.txt
 		list of comic numbers in /originals/index.txt
 
 Brian: program to take each png comic and output individual panels as
@@ -27,6 +26,10 @@ separate images (and the number of images).
 
 Zach: program to take each text file from Explain XKCD and the number of
 panels, and to output a text file containing relevant text for each panel.
+
+	Program: parser.py
+	Input: File name to read
+	Output: None, formats the file to be readable by Annie's program
 
 ##Postprocessing
 
