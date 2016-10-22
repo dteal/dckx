@@ -13,9 +13,3 @@ def transcriptParser(fileName):
 	
 	transcript.write(wordsToParse)
 	transcript.close()
-
-from sys import argv
-
-script, filename = argv
-
-transcriptParser(filename)
