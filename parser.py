@@ -1,11 +1,11 @@
 def transcriptParser(fileName):
-	transcript = open(fileName, "r+") 
+	transcript = open(fileName, "r+")
+	
+	delete = ['[',']','{','}','.','\n','"',',']
 
 	wordsToParse = transcript.read()
-	wordsToParse = wordsToParse.replace('.', '')
-	wordsToParse = wordsToParse.replace('\n', ' ')
-	wordsToParse = wordsToParse.replace('"', '')
-	wordsToParse = wordsToParse.replace(',', '')
+	for s in delete:
+		wordsToParse = wordsToParse.replace(s, '')
 	wordsToParse = wordsToParse.lower()
 	
 	transcript.seek(0)
