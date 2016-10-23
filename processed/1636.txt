@@ -1,0 +1,1 @@
+n in software engineering a tech stack is the set of technology platforms and tools that a company or app uses a common tech stack is lamp composed of a linux operating system an apache web server a mysql database and the php programming language in this comic the xkcd stack is introduced the technologies comprising it are either non existent unreliable or outdated  
