@@ -14,8 +14,8 @@ get enough programmer humor? Read your *Times* headlines in XKCD panels!
 This program requires Python 3 with Pillow and nltk (including the nltk
 corpus) installed as well as an internet connection.
 
-Run dckx.py. The New York Times' most recent headline will be elucidatingly
-reinterpreted via XKCD conglomeration.
+Run dckx.py with command line arguments. Said arguments, forming, ostensibly,
+a headline, will be elucidatingly reinterpreted via XKCD conglomeration.
 
 ##Preprocessing
 
