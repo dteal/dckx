@@ -18,14 +18,18 @@ edged = cv2.Canny(gray, 30, 200)
 #cv2.waitKey(0)
 
 im2, contours, hierarchy = cv2.findContours(edged.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-contours = sorted(contours, key = cv2.contourArea, reverse = True)[:4]
+contours = sorted(contours, key = cv2.contourArea, reverse = True)[:10]
 largestPanel = None
 
 
 contourArray = []
+#badContoursArray = []
 for c in contours:
 	peri = cv2.arcLength(c, True)
 	approx = cv2.approxPolyDP(c, 0.02 * peri, True)
+	print(cv2.contourArea(c))
+	#if(cv2.contourArea(c) < 20000:
+	#	badContours.append(approx)
 
 	if len(approx) == 4:
 		contourArray.append(approx)
@@ -49,8 +53,9 @@ cv2.waitKey(0)
 
 panelCnt = 1;
 for c in contours:
-	x, y, width, height = cv2.boundingRect(c)
-	roi = orig[y:y+height, x:x+width]
-	cv2.imwrite(str(panelCnt)+".png", roi)
-	panelCnt += 1
+	if cv2.contourArea(c) > 20000:
+		x, y, width, height = cv2.boundingRect(c)
+		roi = orig[y:y+height, x:x+width]
+		cv2.imwrite(str(panelCnt)+".png", roi)
+		panelCnt += 1
 
