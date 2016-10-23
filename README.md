@@ -22,13 +22,13 @@ is, you will be given a superb image pieced together from hand-picked
 out-of-context singular panels removed from their native comic.
 
 For example, "python dckx.py star wars" could create the above image. The
-left panel must be part of an XKCD comic that references stars, and the right,
+left panel must be part of an xkcd comic that references stars, and the right,
 one that references wars.
 
 ##Preprocessing
 
 In order to run, dckx has a large precollated library of source material.
-The materials consists of webscraped XKCD graphics, caption text, and
+The materials consists of webscraped xkcd graphics, caption text, and
 executive summaries drawn from explainxkcd.com. The database generation code,
 in modular form, is in getxkcd.py, parser.py, and contourtest.py.
 
@@ -64,7 +64,7 @@ user's convenience.
 ##Authorship
 
 dckx was authored by Annie, Brian, Daniel, Kevin, and Zach during HackTX 2016.
-
+https://creativecommons.org/licenses/by-nc/2.5/
 The webcomic [xkcd](https://www.xkcd.com/) is created by Randall Munroe. It
 (and all images here originally from xkcd) are licensed under a
 [Creative Commons Attribution-NonCommercial 2.5 License](https://creativecommons.org/licenses/by-nc/2.5/).
