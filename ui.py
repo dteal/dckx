@@ -50,7 +50,7 @@ from PIL import Image
 
 #Testing
 list_im = ['Test1.png','Test2.png']
-new_im = Image.new('RGB', (740,305)) #creates a new empty image, RGB mode, and size 444 by 95
+new_im = Image.new('RGB', (900,200)) #creates a new empty image, RGB mode, and size 444 by 95
 
 
 continuex = True
@@ -62,8 +62,9 @@ while(continuex == True):
 	#output = functname(word, number)
 	
 	im=Image.open(word)
+	im.thumbnail((450,200))
 	new_im.paste(im, (index,0))
-	index += 500
+	index += 450
 	
 	next = input('Continue?(1 for yes, 0 for no): ')
 	if(next == '0'):
