@@ -1,51 +1,38 @@
-##########FAILED ATTEMPT AT INTEGRATING THESAURUS. PLEASE COMPLETE. ###########
+import os
+from nltk.corpus import wordnet
 
-#import dictclient
+# get synonyms of word
+def get_synonyms(word):
+	synonyms = []
+	for syn in wordnet.synsets(word):
+		for l in syn.lemmas():
+			synonyms.append(l.name())
+	return list(set(synonyms)) # remove duplicates
 
-#class Thesaurus(object):
-#       def __init__ (self, server='localhost'):
-#               self.dict = 'moby-thesaurus'
-#               self.connection = dictclient.Connection(hostname=server)
-#       def query_synonyms(self, word):
-#               definitions = self.connection.define(self.dict, word)
-#               words = [w.strip() for d in definitions for 1 in d.getdefstr()
-#               return words
-#       def find_synonym(self, word, words):
-#               word = unicode.lower(word)
-#               syns = self.qiery_synonyms(word)
-#               for w in map(unicode.lower, words):
-#                       if w in syns:
-#                               return w
-#               for w in map(unicode.lower, words):
-#                       syns = self.query_synonyms(w)
-#                       if word in syns:
-#                               return w
-#               return None
-
-
+# associate scorew with each text file
 def search(word, num):
-	
-	return(['1_1')
-	#opens file with names of all files on seperate lines
-	master = open ("file.txt", "r")
-	#goes through each file(which represents a panel) on by one
-	for name in master:
-			name = name.rstrip("\n")
-			infile = open (name, "r")
-			found = False
-			alist = []
-			#goes through every line in each file
-			for line in infile:
-					line = line.rstrip("\n")
-					#if target word is found in file/panel, add the file name to list, and stop
-					if word in line:
-							alist.append(name)
-							found = True
-							break
-			#prints list if any related files exist. else prints "Not found"
-			if found:
-					print(alist)
-			else:
-					print("Not found")
-	infile.close()
-#search("mushroom")
+	synonyms = get_synonyms(word)
+	ratings = {}
+	for filename in os.listdir(os.getcwd()+'/processed/'):
+		if filename[-4:]=='.txt':
+			basename = filename[:-4]
+			with open('processed/' + filename, 'r') as f:
+				count = 0
+				for word in f.read().split():
+					if word in synonyms:
+						count = count + 1
+				ratings[basename] = count
+	return getbestkeys(ratings, num)
+
+# choose up to num best values from dictionary
+def getbestkeys(ratings, num):
+	v = list(ratings.values()) # ratings
+	k = list(ratings.keys()) # file names
+	result = []
+	for i in range(min(num, len(v))):
+		maxindex = v.index(max(v))
+		result.append(k[maxindex])
+		del v[maxindex]
+		del k[maxindex]
+	return result
+
