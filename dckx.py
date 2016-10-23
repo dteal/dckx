@@ -1,12 +1,20 @@
-
 import os
 import sys
-from PIL import Image
 import search
+import requests
+from PIL import Image
+from bs4 import BeautifulSoup
 
-input_code = ['dog', 'computer', 'flower'] #[input('Please enter a word: ')]
+# get times headlines
+times_raw = requests.get('http://www.nytimes.com/').text
+times_soup = BeautifulSoup(times_raw, 'lxml')
+headline = times_soup.find('h2', {'class':'story-heading'}).a.contents
+headline = str(headline[0].encode('utf-8'))
+print(headline)
+
+
+input_code = headline.split() #[input('Please enter a word: ')]
 print('The work is: ', input_code)
-number = input('How many panels do you want to see: ')
 
 filename = ''
 image_names = []
