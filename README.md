@@ -64,8 +64,7 @@ user's convenience.
 ##Authorship
 
 dckx was authored by Annie, Brian, Daniel, Kevin, and Zach during HackTX 2016.
-https://creativecommons.org/licenses/by-nc/2.5/
+
 The webcomic [xkcd](https://www.xkcd.com/) is created by Randall Munroe. It
 (and all images here originally from xkcd) are licensed under a
 [Creative Commons Attribution-NonCommercial 2.5 License](https://creativecommons.org/licenses/by-nc/2.5/).
-licensed under the 
