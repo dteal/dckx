@@ -32,6 +32,7 @@ for c in contours:
 	#if(cv2.contourArea(c) < 20000:
 	#	badContours.append(approx)
 
+	##if 
 	if len(approx) == 4:
 		contourArray.append(approx)
 		#largestPanel = approx
@@ -50,8 +51,9 @@ out[mask == [255, 255, 255]] = image[mask == [255, 255, 255]]
 #cv2.imshow("contour", out)
 #cv2.waitKey(0)
 
-##ROI
+##ROI - region of interest
 
+##specifies directory to output panels
 os.chdir("/home/wangbri/Desktop/imgsplice/splitpanels")
 
 filename = args["query"]
@@ -61,7 +63,9 @@ if filename.endswith('.png'):
 
 panelCnt = 1;
 for c in contours:
+	##excludes files smaller than typical xkcd panel
 	if cv2.contourArea(c) > 20000:
+		##sets bounding rectangle
 		x, y, width, height = cv2.boundingRect(c)
 		roi = orig[y:y+height, x:x+width]
 		cv2.imwrite(filename + "_" + str(panelCnt)+".png", roi)
