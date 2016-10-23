@@ -4,10 +4,10 @@
 * Deeply Concerning Knews eXceptor
 * Daleks Can be Killed by X-rays
 * Don't Care, Keep Xeroxing
+* Dainty Cute Kittens are Xenial
 
-Current plan:
-
-We'll have multiple little sub-programs, each with a specific task.
+...is the news aggregator of the future! Tired of boring world news? Can't
+get enough programmer humor? Read your *Times* headlines in XKCD panels!
 
 ##Preprocessing
 
@@ -18,7 +18,7 @@ PNG and text files, respectively.
 	Input: (none)
 	Output:
 		image files in /originals/, e.g., dckx/originals/971.png
-		transcript text in /originals/, e.g., dckx/original/971_transcript.txt
+		summary text in /originals/, e.g., dckx/original/971_summary.txt
 		list of comic numbers in /originals/index.txt
 
 Brian: program to take each png comic and output individual panels as
@@ -40,4 +40,12 @@ needed and relevant text to describe each panel.
 
 Annie: program that matches a bit of text to the most relevant panel
 description.
+
+	Program: search.py, implements search() function.
+	Input:
+		Input word (str)
+		Num results (int)
+	Output:
+		List of num strs that match images, e.g., ['1_1','4_1']
+	
 

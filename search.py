@@ -23,8 +23,9 @@
 #               return None
 
 
-def search(word):
-	return(['1_1'])
+def search(word, num):
+	
+	return(['1_1')
 	#opens file with names of all files on seperate lines
 	master = open ("file.txt", "r")
 	#goes through each file(which represents a panel) on by one
