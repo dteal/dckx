@@ -18,7 +18,7 @@ edged = cv2.Canny(gray, 30, 200)
 #cv2.waitKey(0)
 
 im2, contours, hierarchy = cv2.findContours(edged.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-contours = sorted(contours, key = cv2.contourArea, reverse = True)[:10]
+contours = sorted(contours, key = cv2.contourArea, reverse = True)[:4]
 largestPanel = None
 
 
@@ -44,4 +44,13 @@ out[mask == [255, 255, 255]] = image[mask == [255, 255, 255]]
 #cv2.drawContours(image, contourArray, -1, (0, 255, 0), 3)
 cv2.imshow("contour", out)
 cv2.waitKey(0)
+
+#ROI
+
+panelCnt = 1;
+for c in contours:
+	x, y, width, height = cv2.boundingRect(c)
+	roi = orig[y:y+height, x:x+width]
+	cv2.imwrite(str(panelCnt)+".png", roi)
+	panelCnt += 1
 
