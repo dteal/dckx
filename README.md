@@ -14,10 +14,18 @@ get enough programmer humor? Read your *Times* headlines in XKCD panels!
 ##Usage
 
 This program requires Python 3 with Pillow and nltk (including the nltk
-corpus) installed as well as an internet connection.
+corpus) installed.
 
 Run dckx.py with command line arguments. Said arguments, forming, ostensibly,
-a headline, will be elucidatingly reinterpreted via XKCD conglomeration.
+a headline, will be elucidatingly reinterpreted via XKCD conglomeration. That
+is, you will be given a superb image pieced together from hand-picked
+out-of-context singular panels removed from their native comic.
+
+For example, "python dckx.py star wars" could create the above image. The
+left panel must be part of an XKCD comic that references stars, and the right,
+one that references wars.
+
+
 
 ##Preprocessing
 
