@@ -24,26 +24,27 @@
 
 
 def search(word):
-        #opens file with names of all files on seperate lines
-        master = open ("file.txt", "r")
-        #goes through each file(which represents a panel) on by one
-        for name in master:
-                name = name.rstrip("\n")
-                infile = open (name, "r")
-                found = False
-                alist = []
-                #goes through every line in each file
-                for line in infile:
-                        line = line.rstrip("\n")
-                        #if target word is found in file/panel, add the file name to list, and stop
-                        if word in line:
-                                alist.append(name)
-                                found = True
-                                break
-                #prints list if any related files exist. else prints "Not found"
-                if found:
-                        print(alist)
-                else:
-                        print("Not found")
-        infile.close()
-search("mushroom")
+	return(['1_1'])
+	#opens file with names of all files on seperate lines
+	master = open ("file.txt", "r")
+	#goes through each file(which represents a panel) on by one
+	for name in master:
+			name = name.rstrip("\n")
+			infile = open (name, "r")
+			found = False
+			alist = []
+			#goes through every line in each file
+			for line in infile:
+					line = line.rstrip("\n")
+					#if target word is found in file/panel, add the file name to list, and stop
+					if word in line:
+							alist.append(name)
+							found = True
+							break
+			#prints list if any related files exist. else prints "Not found"
+			if found:
+					print(alist)
+			else:
+					print("Not found")
+	infile.close()
+#search("mushroom")
