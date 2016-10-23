@@ -1,15 +1,16 @@
 def transcriptParser(fileName):
-	transcript = open(fileName, "r+")
+	transcript = open(fileName, 'r')
 	
-	delete = ['[',']','{','}','.','\n','"',',']
-
+	delete = ['[',']','{','}','.','?','!','\n','"',',', ':']
 	wordsToParse = transcript.read()
 	for s in delete:
 		wordsToParse = wordsToParse.replace(s, '')
 	wordsToParse = wordsToParse.lower()
 	
-	transcript.seek(0)
-	transcript.truncate(0)
+	print(wordsToParse)
 	
-	transcript.write(wordsToParse)
 	transcript.close()
+	output = open('new_' + fileName, 'w')
+	
+	output.write(wordsToParse)
+	output.close()
