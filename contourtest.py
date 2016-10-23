@@ -2,6 +2,7 @@ from skimage import exposure
 import numpy as np
 import argparse
 import cv2
+import os
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-q", "--query", required = True, help = "path to query image")
@@ -27,7 +28,7 @@ contourArray = []
 for c in contours:
 	peri = cv2.arcLength(c, True)
 	approx = cv2.approxPolyDP(c, 0.02 * peri, True)
-	print(cv2.contourArea(c))
+	#print(cv2.contourArea(c))
 	#if(cv2.contourArea(c) < 20000:
 	#	badContours.append(approx)
 
@@ -40,22 +41,29 @@ mask = np.zeros_like(image)
 cv2.drawContours(mask, contourArray, -1, [255, 255, 255], -1)
 
 #ret,thresh = cv2.threshold(image, 127, 255, cv2.THRESH_BINARY)
-cv2.imshow("contour", image)
-cv2.waitKey(0)
+#cv2.imshow("contour", image)
+#cv2.waitKey(0)
 
 out = np.zeros_like(image)
 out[mask == [255, 255, 255]] = image[mask == [255, 255, 255]]
 #cv2.drawContours(image, contourArray, -1, (0, 255, 0), 3)
-cv2.imshow("contour", out)
-cv2.waitKey(0)
+#cv2.imshow("contour", out)
+#cv2.waitKey(0)
 
-#ROI
+##ROI
+
+os.chdir("/home/wangbri/Desktop/imgsplice/splitpanels")
+
+filename = args["query"]
+
+if filename.endswith('.png'):
+	filename = filename[:-4]
 
 panelCnt = 1;
 for c in contours:
 	if cv2.contourArea(c) > 20000:
 		x, y, width, height = cv2.boundingRect(c)
 		roi = orig[y:y+height, x:x+width]
-		cv2.imwrite(str(panelCnt)+".png", roi)
+		cv2.imwrite(filename + "_" + str(panelCnt)+".png", roi)
 		panelCnt += 1
 
