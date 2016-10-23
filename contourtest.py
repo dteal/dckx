@@ -17,18 +17,31 @@ edged = cv2.Canny(gray, 30, 200)
 #cv2.imshow("canny", edged)
 #cv2.waitKey(0)
 
-im2, contours, hierarchy = cv2.findContours(edged.copy(), cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE)
+im2, contours, hierarchy = cv2.findContours(edged.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 contours = sorted(contours, key = cv2.contourArea, reverse = True)[:10]
 largestPanel = None
 
+
+contourArray = []
 for c in contours:
 	peri = cv2.arcLength(c, True)
 	approx = cv2.approxPolyDP(c, 0.02 * peri, True)
 
 	if len(approx) == 4:
-		largestPanel = approx
-		break
+		contourArray.append(approx)
+		#largestPanel = approx
+		#break
 
-cv2.drawContours(image, [largestPanel], -1, (0, 255, 0), 3)
+mask = np.zeros_like(image)
+cv2.drawContours(mask, contourArray, -1, [255, 255, 255], -1)
+
+#ret,thresh = cv2.threshold(image, 127, 255, cv2.THRESH_BINARY)
 cv2.imshow("contour", image)
 cv2.waitKey(0)
+
+out = np.zeros_like(image)
+out[mask == [255, 255, 255]] = image[mask == [255, 255, 255]]
+#cv2.drawContours(image, contourArray, -1, (0, 255, 0), 3)
+cv2.imshow("contour", out)
+cv2.waitKey(0)
+
