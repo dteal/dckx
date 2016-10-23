@@ -1,0 +1,1 @@
+b'[[Many red spiders, standing on and hanging from blocks, hover ominously over a small city, ready to attack]]\n{{title text: Uh-oh.}}\n{{compare to http:\nxkcd.com\n8\n}}'

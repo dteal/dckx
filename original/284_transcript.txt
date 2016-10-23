@@ -1,0 +1,1 @@
+b"[[A man finds a tape measure]]\nMan: Hey, a tape measure!\n[[He extends the tape measure]]\n<<extend>> <<extend>>\n[[The tape measure falls]]\n<<clatter>>\n[[He tries again]]\n<<extend>>\nMan: Eight feet!  I wonder if that's a world record?\n[[He imagines ... In an olympic stadium]]\nAudience:  Go!  Go!  Gooooo!"

@@ -1,7 +1,1 @@
-[[Man and Woman stand]]
-Man: Why do you love me?
-Woman: I don't know; My heart never gave me a choice.
-Man: Aww.
-[[No dialogue]]
-Woman: I wish it had.
-{{title-text:Opening dialogue by Scott}}
+b"[[Man and Woman stand]]\nMan: Why do you love me?\nWoman: I don't know; My heart never gave me a choice.\nMan: Aww.\n[[No dialogue]]\nWoman: I wish it had.\n{{title-text:Opening dialogue by Scott}}"

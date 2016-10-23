@@ -1,2 +1,1 @@
-[[The barrel is shown, floating sideways in a choppy sea. The boy can not be seen]]
-{{title text: :( }}
+b'[[The barrel is shown, floating sideways in a choppy sea. The boy can not be seen]]\n{{title text: :( }}'

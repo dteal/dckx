@@ -1,0 +1,1 @@
+b"I have found the perfect phrase for condescendingly dismissing anything:\n[[Two men are talking, one is wearing a black hat]]\nMan without hat: Have you seen the new ubuntu release?\nMan with black hat: Nah, I'm not really into Pok\xc3\xa9mon.\n{{title text: As of this writing, Ubuntu 6.10 and Firefox 2.0 have left my computer a complete mess.}}"

@@ -1,3 +1,1 @@
-[[There is a man standing on top of a dinosaur (Brontosaurus?) and holding reins to the dinosaurs head.]]
-Man: Before you talk to me, I should warn you: I am kind of strange
-{{title text: Just thought you should know}}
+b'[[There is a man standing on top of a dinosaur (Brontosaurus?) and holding reins to the dinosaurs head.]]\nMan: Before you talk to me, I should warn you: I am kind of strange\n{{title text: Just thought you should know}}'

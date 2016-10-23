@@ -1,4 +1,1 @@
-[[ Person talks on phone.  Cat with many sharp points looks on. ]]
-Person on phone: Hi, Dr. Elizabeth?  Yeah, uh ... I accidentally took the Fourier transform of my cat ...
-Cat: Meow!
-{{alt-text: That cat has some serious periodic components}}
+b'[[ Person talks on phone.  Cat with many sharp points looks on. ]]\nPerson on phone: Hi, Dr. Elizabeth?  Yeah, uh ... I accidentally took the Fourier transform of my cat ...\nCat: Meow!\n{{alt-text: That cat has some serious periodic components}}'

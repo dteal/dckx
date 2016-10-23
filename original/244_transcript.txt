@@ -1,0 +1,1 @@
+b'[[Four people sit around a table]]\nDM: Your party enters the tavern.\nPlayer: I gather everyone around a table. I have the elves start whittling dice and get out some parchment for character sheets.\nDM: Hey, no recursing.\n{{title-text: I may have also tossed one of a pair of teleportation rings into the ocean, with interesting results.}}'

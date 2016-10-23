@@ -1,2 +1,1 @@
-In what scientists are calling "pretty gay," I can't find my shoes.
-{{ alt: A leading expert characterized the situation as 'retarded' }}
+b'In what scientists are calling "pretty gay," I can\'t find my shoes.\n{{ alt: A leading expert characterized the situation as \'retarded\' }}'

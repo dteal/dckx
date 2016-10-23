@@ -1,2 +1,1 @@
-[[A sketch of an Island]]
-{{Alt:Hello, island}}
+b'[[A sketch of an Island]]\n{{Alt:Hello, island}}'

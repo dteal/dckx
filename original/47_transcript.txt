@@ -1,3 +1,1 @@
-[[A stack of stick figures, standing on each others shoulders extends from the bottom of the frame to the top.  Cuboids hang in the air]]
-The counter-red-spider offensive begins ...
-{{title text: I hope we can stop them}}
+b'[[A stack of stick figures, standing on each others shoulders extends from the bottom of the frame to the top.  Cuboids hang in the air]]\nThe counter-red-spider offensive begins ...\n{{title text: I hope we can stop them}}'
