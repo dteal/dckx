@@ -25,8 +25,6 @@ For example, "python dckx.py star wars" could create the above image. The
 left panel must be part of an XKCD comic that references stars, and the right,
 one that references wars.
 
-
-
 ##Preprocessing
 
 In order to run, dckx has a large precollated library of source material.
