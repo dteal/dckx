@@ -28,7 +28,7 @@ Zach: program to take each text file from Explain XKCD and the number of
 panels, and to output a text file containing relevant text for each panel.
 
 	Program: parser.py
-	Input: Nothing, it's a script
+	Input: Nothing, it's a script so you just put it in the same folder as your files
 	Output: A folder full of newly formatted files
 
 ##Postprocessing
