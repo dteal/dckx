@@ -1,12 +1,1 @@
-[[Two guys stand next to each other talking]]
-A: I just feel like somewhere out there is the girl for me.
-B: Yeah.
-A: Someone loving and caring.
-B: I know what you mean.
-A: A girl whose only mode of transportation is the M.C. Hammer Slide.
-B: Yeah.
-B: ...Wait, what?
-[[A girl hammer slides past]]
-[[A sees girl hammer slide and it's love at first sight]]
-[[Girl hammer slides over into A's waiting arms]]
-{{alt text: Once, long ago, I saw this girl go by. I didn't stop and talk to her, and I've regretted it ever since.}}
+b"[[Two guys stand next to each other talking]]\nA: I just feel like somewhere out there is the girl for me.\nB: Yeah.\nA: Someone loving and caring.\nB: I know what you mean.\nA: A girl whose only mode of transportation is the M.C. Hammer Slide.\nB: Yeah.\nB: ...Wait, what?\n[[A girl hammer slides past]]\n[[A sees girl hammer slide and it's love at first sight]]\n[[Girl hammer slides over into A's waiting arms]]\n{{alt text: Once, long ago, I saw this girl go by. I didn't stop and talk to her, and I've regretted it ever since.}}"

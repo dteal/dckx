@@ -1,0 +1,1 @@
+b"WikiFriends:\n[[Two people are talking to each other]]\nPerson 1: I really liked that movie.\nPerson 2: I hated that movie.\nPerson 1: Me too.\n{{title text: It's crazy how much my gut opinion of a movie\nsong is swayed by what other people say, regardless of how I felt coming out of the theater.}}"

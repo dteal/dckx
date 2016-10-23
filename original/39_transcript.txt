@@ -1,3 +1,1 @@
-[[A boy is glaring at a model sailing ship floating in a bowl of water.]]
-Boy: Sooner or later, my friend, one of us will run out of time.
-{{Alt: For the moment it's a standoff}}
+b"[[A boy is glaring at a model sailing ship floating in a bowl of water.]]\nBoy: Sooner or later, my friend, one of us will run out of time.\n{{Alt: For the moment it's a standoff}}"

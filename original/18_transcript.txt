@@ -1,12 +1,1 @@
-{{Author's Comment: This one is entirely James' fault.}}
-[[Two guys are standing and talking.]]
-Right Guy: Here, take a bite of this Snapple.
-Left Guy: food!
-[[Guy on the right takes a bite]]
-Right Guy: Ow! What is this? 
-<<CLINK>>
-Left Guy: It's an apple infused with tin.
-[[The two guys continue to stand as if frozen]]
- 
-{{Author's Comment: Those of you who know your periodic table should be laughing right about now.}} 
-{{Title Text: Sn= tin}}
+b"{{Author's Comment: This one is entirely James' fault.}}\n[[Two guys are standing and talking.]]\nRight Guy: Here, take a bite of this Snapple.\nLeft Guy: food!\n[[Guy on the right takes a bite]]\nRight Guy: Ow! What is this? \n<<CLINK>>\nLeft Guy: It's an apple infused with tin.\n[[The two guys continue to stand as if frozen]]\n \n{{Author's Comment: Those of you who know your periodic table should be laughing right about now.}} \n{{Title Text: Sn= tin}}"

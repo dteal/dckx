@@ -1,5 +1,1 @@
-[[Text only panel, hand written.]]
-Welcome to text-only Counterstrike.
-You are in a dark, outdoor map.
-> GO NORTH
-You have been pwned by a grue.
+b'[[Text only panel, hand written.]]\nWelcome to text-only Counterstrike.\nYou are in a dark, outdoor map.\n> GO NORTH\nYou have been pwned by a grue.'

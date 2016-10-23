@@ -1,59 +1,72 @@
+from sys import exit
 from bs4 import BeautifulSoup
 import requests
 
+# open indexing file
 index_filename = 'original/index.txt'
 with open(index_filename, 'w') as index_file:
 
-	for comic_index in range(124):
+	# find number of comics
+	try:
+		homepage = requests.get('https://www.xkcd.com/').text
+		homepage_soup = BeautifulSoup(homepage, 'lxml')
+		prev_comic = homepage_soup.find('a', {'rel':'prev'}).get('href')[1:-1]
+		num_comics = 1 + int(prev_comic)
+	except IOError:
+		print('Error: could not retrieve number of comics!')
 
-		index_file.write(str(comic_index+1)+'\n')
+	# loop through all comics
+	for comic_index in range(num_comics):
 
-		# get html file
-		url = 'https://www.xkcd.com/' + str(comic_index+1)
-		r = requests.get(url)
-		html = r.text
+		if (comic_index + 1) % 10 == 0:
+			print(comic_index + 1)
 
-		'''
-		<div id="comic">
-		<img src="//imgs.xkcd.com/comics/alternative_literature.png" title="I just noticed CVS has started stocking homeopathic pills on the same shelves with--and labeled similarly to--their actual medicine. Telling someone who trusts you that you&#39;re giving them medicine, when you know you’re not, because you want their money, isn’t just lying--it’s like an example you’d make up if you had to illustrate for a child why lying is wrong." alt="Alternative Literature" />
-		</div>
+		#print('Attempting to download XKCD ' + str(comic_index + 1) + '...')
 
-		<div id="transcript" style="display: none">[[Person 1 and 2 stand in front of Person 2&#39;s bookcase.  Person 1 flips through a number of them]]
-		Person 1: All your books are full of blank pages.
-		Person 2: Not true. That one has some ink on page 78.
-		[[Person 1 looks at page 78]]
-		Person 1: A smudge.
-		Person 2: So?
-
-		Person 1: There are no words. You&#39;re not reading. There&#39;s no *story* there.
-		Person 2: Maybe not for you. When I look at those books, I think about all *kinds* of stories.
-
-		Person 2: Reading is about more than what&#39;s on the page. Holding a book prompts my mind to enrich itself.  Frankly, I suspect the book isn&#39;t even necessary.
-
-		Person 2: The whole industry is evil. Greedy publishers and rich authors try to convince us our brains *need* their words. But I refuse to be a sucker.
-		Person 1: Who sold you all these blank books?
-
-		{{Title text: I just noticed CVS has started stocking homeopathic pills on the same shelves with--and labeled similarly to--their actual medicine. Telling someone who trusts you that you&#39;re giving them medicine, when you know youâre not, because you want their money, isnât just lying--itâs like an example youâd make up if you had to illustrate for a child why lying is wrong.}}</div>
-		</div>
-		'''
-
-		# beautify html
-		soup = BeautifulSoup(html, 'lxml')
+		# get html file of comic and beautify
+		try:
+			comic_url = 'https://www.xkcd.com/' + str(comic_index+1)
+			comic_raw = requests.get(comic_url)
+			comic_html = comic_raw.text
+			comic_soup = BeautifulSoup(comic_html, 'lxml')
+		except IOError:
+			print('Error: could not load XKCD ' + str(comic_index + 1) + '!')
+			continue
 
 		# find image url
-		comic_url = soup.find('div', {'id':'comic'}).img.get('src')
-		comic_url = 'https:' + comic_url
-#		print(comic_url)
+		try:
+			image_url = comic_soup.find('div', {'id':'comic'}).img.get('src')
+			image_url = 'https:' + image_url
+		except IOError:
+			print('Error: could not load XKCD ' + str(comic_index + 1) + '!')
+			continue
 
-		transcript = soup.find('div', {'id':'transcript'}).contents
-#		print(transcript)
+		# find comic transcript
+		try:
+			transcript = comic_soup.find('div', {'id':'transcript'}).contents
+		except IOError:
+			print('Error: no transcript in XKCD ' + str(comic_index + 1) + '!')
+			continue
 
-		filename = 'original/' + str(comic_index+1) + '.png'
-		with open(filename, 'wb') as f:
-			f.write(requests.get(comic_url).content)
+		# download and write image to file
+		try:
+			filename = 'original/' + str(comic_index + 1) + '.png'
+			with open(filename, 'wb') as f:
+				f.write(requests.get(image_url).content)
+		except IOError:
+			print('Error: no picture in XKCD ' + str(comic_index + 1) + '!')
+			continue
 
-		filename = 'original/' + str(comic_index+1) + '_transcript.txt'
-		with open(filename, 'w') as f:
-			for line in transcript:
-				f.write(line)
+		# write transcript to file
+		try:
+			filename = 'original/' + str(comic_index + 1) + '_transcript.txt'
+			with open(filename, 'w') as f:
+				for line in transcript:
+					f.write(str(line.encode('utf-8')))
+		except IOError:
+			print('Error: transcripting XKCD ' + str(comic_index + 1) + '!')
+			continue
+
+		# record comic number in index file
+		index_file.write(str(comic_index + 1) + '\n')
 

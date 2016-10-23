@@ -1,0 +1,1 @@
+b'[[ A man is sitting on a couch, talking to another man.  They are both stick figures. ]]\nFirst man:  Make me a sandwich.\nSecond man:  What?  Make it yourself.\nFirst man:  Sudo make me a sandwich.\nSecond man:  Okay'

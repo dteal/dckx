@@ -1,3 +1,1 @@
-[[A blue driving Mitsubishi with spoiler]]
-Bumper sticker: This IS my other car.
-{{title text: It's much better than the other one.}}
+b"[[A blue driving Mitsubishi with spoiler]]\nBumper sticker: This IS my other car.\n{{title text: It's much better than the other one.}}"

@@ -1,0 +1,1 @@
+b"( ( cos 90\xc2\xba  sin 90\xc2\xba) ( -sin 90\xc2\xba cos 90\xc2\xba ) )  ( a1 a2 )t = [[The same (a1 a2)t matrix turned 90\xc2\xba to the right]]\n{{In fact, draw all your rotational matrices sideways.  Your professors will love it!  And then they'll go home and shrink.}}"

@@ -1,7 +1,1 @@
-[[A green car with the text next to it]]
-My hobby:
-While everyone is watching
-the Super Bowl, feeling
-smugly superior because
-they're "Only watching for
-the ads," I steal cars.
+b'[[A green car with the text next to it]]\nMy hobby:\nWhile everyone is watching\nthe Super Bowl, feeling\nsmugly superior because\nthey\'re "Only watching for\nthe ads," I steal cars.'
