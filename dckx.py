@@ -1,4 +1,5 @@
 import os
+import re
 import sys
 import search
 import requests
@@ -11,25 +12,38 @@ from bs4 import BeautifulSoup
 times_raw = requests.get('http://www.nytimes.com/').text
 times_soup = BeautifulSoup(times_raw, 'lxml')
 headline = times_soup.find('h2', {'class':'story-heading'}).a.contents
-headline = str(headline[0].encode('utf-8'))
+headline = str(headline[0].encode('utf-8'))[2:-1]
 print(headline)
 
 text_height = 150 
 
 input_code = headline.split() #[input('Please enter a word: ')]
+redo = []
+pattern = re.compile('[^a-zA-Z]')
+for word in input_code:
+	if (not (len(word)<3)) and (re.match(pattern, word) is None) and word.find('&')==-1:
+		redo.append(word)
+input_code = redo
 print('The work is: ', input_code)
+
+used=[]
 
 filename = ''
 image_names = []
 for word in input_code:
 	filename = filename + word + '_'
 	#print('Filename: ', filename)
-	possibilities = search.search(word, 1)
-	#print('Possibilities: ', possibilities)
-	image_names.append('original/' + possibilities[0] + '.png')
+	possibilities = search.search(word, 10)
+	print('Possibilities: ', possibilities)
+	i = 0
+	while(possibilities[i] in used) and i < 9:
+		i = i + 1
+	image_names.append('processed/' + possibilities[i] + '_1.png')
+	used.append(possibilities[i])
 	#print('Image selected: ', possibilities[0]+'.png')
 filename = 'output/' + filename[:-1] + '.png'
-#print('Output filename: ', filename)
+filename = filename.lower()
+print('Output filename: ', filename)
 
 images = map(Image.open, image_names)
 widths, heights = zip(*(i.size for i in images))
@@ -54,10 +68,17 @@ for i in range(len(widths)):
 	index += temp_width
 
 draw = ImageDraw.Draw(new_im)
-font = ImageFont.truetype('lsansuni.ttf', 100)
+w=1000000000
+fontsize = 110
+while(w > total_width):
+	fontsize = int(.9 * fontsize)
+	font = ImageFont.truetype('lsansuni.ttf', fontsize)
+	w, h = draw.textsize(headline.upper(), font=font)
+
 draw.rectangle([(0,0), (total_width, text_height)], fill=(255,255,255))
-draw.text((50,10), headline.upper(), (0,0,0), font=font)
+draw.text(((total_width-w)/2, max(0,(text_height-h)/2)-10), headline.upper(), (0,0,0), font=font)
 
 new_im.save(filename)
-os.system(filename)
+os.chdir('output')
+os.system(filename[7:])
 

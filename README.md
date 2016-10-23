@@ -17,9 +17,6 @@ corpus) installed as well as an internet connection.
 Run dckx.py. The New York Times' most recent headline will be elucidatingly
 reinterpreted via XKCD conglomeration.
 
-If any command line arguments are set, dckx will instead produce a graphical
-illustration with one panel per argument.
-
 ##Preprocessing
 
 In order to run, dckx has a large precollated library of source material.
@@ -51,10 +48,10 @@ in modular form, is in getxkcd.py, parser.py, and contourtest.py.
 
 ##Postprocessing
 
-	Input is tokenized by dckx.py, then fed into search.py, which uses
-	several techniques to match each token to a proper comic panel. These
-	panels are recombined in an output comic, which is displayed for the
-	user's convenience.
+Input is tokenized by dckx.py, then fed into search.py, which uses
+several techniques to match each token to a proper comic panel. These
+panels are recombined in an output comic, which is displayed for the
+user's convenience.
 
 ##Authorship
 
