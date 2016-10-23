@@ -23,9 +23,13 @@ largestPanel = None
 
 
 contourArray = []
+#badContoursArray = []
 for c in contours:
 	peri = cv2.arcLength(c, True)
 	approx = cv2.approxPolyDP(c, 0.02 * peri, True)
+	print(cv2.contourArea(c))
+	#if(cv2.contourArea(c) < 20000:
+	#	badContours.append(approx)
 
 	if len(approx) == 4:
 		contourArray.append(approx)
@@ -44,4 +48,14 @@ out[mask == [255, 255, 255]] = image[mask == [255, 255, 255]]
 #cv2.drawContours(image, contourArray, -1, (0, 255, 0), 3)
 cv2.imshow("contour", out)
 cv2.waitKey(0)
+
+#ROI
+
+panelCnt = 1;
+for c in contours:
+	if cv2.contourArea(c) > 20000:
+		x, y, width, height = cv2.boundingRect(c)
+		roi = orig[y:y+height, x:x+width]
+		cv2.imwrite(str(panelCnt)+".png", roi)
+		panelCnt += 1
 
