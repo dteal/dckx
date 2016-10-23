@@ -9,43 +9,54 @@
 ...is the news aggregator of the future! Tired of boring world news? Can't
 get enough programmer humor? Read your *Times* headlines in XKCD panels!
 
+##Usage
+
+This program requires Python 3 with Pillow and nltk (including the nltk
+corpus) installed as well as an internet connection.
+
+Run dckx.py. The New York Times' most recent headline will be elucidatingly
+reinterpreted via XKCD conglomeration.
+
+If any command line arguments are set, dckx will instead produce a graphical
+illustration with one panel per argument.
+
 ##Preprocessing
 
-Daniel: program to download XKCD images and Explain XKCD text to numbered
-PNG and text files, respectively.
+In order to run, dckx has a large precollated library of source material.
+The materials consists of webscraped XKCD graphics, caption text, and
+executive summaries drawn from explainxkcd.com. The database generation code,
+in modular form, is in getxkcd.py, parser.py, and contourtest.py.
 
 	Program: getxkcd.py
+	Input: (none)
+	Output:
+		image files in /originals/, e.g., dckx/originals/971.png
+		summary text in /originals/, e.g., dckx/original/971_transcript.txt
+		list of comic numbers in /originals/index.txt
+
+	Program: parser.py
 	Input: (none)
 	Output:
 		image files in /originals/, e.g., dckx/originals/971.png
 		summary text in /originals/, e.g., dckx/original/971_summary.txt
 		list of comic numbers in /originals/index.txt
 
-Brian: program to take each png comic and output individual panels as
-separate images (and the number of images).
-
-Zach: program to take each text file from Explain XKCD and the number of
-panels, and to output a text file containing relevant text for each panel.
-
-	Program: parser.py
-	Input: Nothing, it's a script so you just put it in the same folder as your files
-	Output: A folder full of newly formatted files
+	Program: contourtest.py
+	Requirements: OpenCV
+	Input: (none)
+	Output:
+		image files in /originals/, e.g., dckx/originals/971.png
+		summary text in /originals/, e.g., dckx/original/971_transcript.txt
+		list of comic numbers in /originals/index.txt
 
 ##Postprocessing
 
-Kevin: program that takes input from user and ends up with a number of panels
-needed and relevant text to describe each panel.
+	Input is tokenized by dckx.py, then fed into search.py, which uses
+	several techniques to match each token to a proper comic panel. These
+	panels are recombined in an output comic, which is displayed for the
+	user's convenience.
 
-	Program: ui.py
+##Authorship
 
-Annie: program that matches a bit of text to the most relevant panel
-description.
-
-	Program: search.py, implements search() function.
-	Input:
-		Input word (str)
-		Num results (int)
-	Output:
-		List of num strs that match images, e.g., ['1_1','4_1']
-	
+dckx was authored by Annie, Brian, Daniel, Kevin, and Zach during HackTX 2016.
 
