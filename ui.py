@@ -1,97 +1,47 @@
+
+import os
 import sys
 from PIL import Image
+import search
 
-#word = input('Please enter a word: ')
-#TESTING print('The work is: ',word)
-#number = input('How many panels do you want to see: ')
-#output = functname(word, number)
+input_code = ['dog', 'computer', 'flower'] #[input('Please enter a word: ')]
+print('The work is: ', input_code)
+number = input('How many panels do you want to see: ')
 
+filename = ''
+image_names = []
+for word in input_code:
+	filename = filename + word + '_'
+	#print('Filename: ', filename)
+	possibilities = search.search(word, 1)
+	#print('Possibilities: ', possibilities)
+	image_names.append('original/' + possibilities[0] + '.png')
+	#print('Image selected: ', possibilities[0]+'.png')
+filename = filename[:-1] + '.png'
+#print('Output filename: ', filename)
 
-#output = "1749_1"
-#png = ".png"
-#TESTING print(output)
+images = map(Image.open, image_names)
+widths, heights = zip(*(i.size for i in images))
+#print('Widths: ', widths)
+#print('Heights: ', heights)
 
-#photo = output + png
-
-#Takes in an image and outputs to another png file
-#with open(photo, 'rb') as inf:
-#	pngdata = inf.read()
-	
-#with open('1749_out.txt', 'wb') as inf:
-#	inf.write(pngdata)
-	
-
-#Adds pictures together
-#images = map(Image.open, ['Test1.png', 'Test2.png'])
-#widths, heights = zip(*(i.size for i in images))
-
-#total_width = sum(widths)
-#max_height = max(heights)
-
-#new_im = Image.new('RGB', (total_width, max_height))
-
-#x_offset = 0
-#for im in images:
-#	new_im.paste(im, (x_offset,0))
-#	x_offset += im.size[0]
-
-#new_im.save('Test.png')
-
-
-#WORKING
-#list_im = ['Test1.png','Test2.png']
-#new_im = Image.new('RGB', (444,95)) #creates a new empty image, RGB mode, and size 444 by 95
-
-#for elem in list_im:
-#    for i in range(0,444,95):
-#        im=Image.open(elem)
-#        new_im.paste(im, (i,0))
-#new_im.save('Test.png')
-
-#Testing
-list_im = ['Test1.png','Test2.png']
-new_im = Image.new('RGB', (900,200)) #creates a new empty image, RGB mode, and size 444 by 95
-
-
-continuex = True
+max_height = max(heights)
+total_width = 0
+for i in range(len(widths)):
+	total_width += int(widths[i] * (max_height/heights[i]))
+#print('Total width: ', total_width)
+# generate new image
+new_im = Image.new('RGB', (total_width, max_height))
 index = 0
+for i in range(len(widths)):
+	temp_width = int(widths[i] * max_height / heights[i])
+	#print("Temp width: ", temp_width)
+	temp_im=Image.open(image_names[i])
+	temp_im = temp_im.resize((temp_width, max_height), Image.ANTIALIAS)
+	#temp_im=temp_im.transform((temp_width, max_height), Image.AFFINE, (widths[0], heights[0], temp_width, max_height))
+	new_im.paste(temp_im, (index,0))
+	index += temp_width
 
-while(continuex == True):
-	word = input('Please enter a word: ')
-	number = input('How many panels do you want to see: ')
-	#output = functname(word, number)
-	
-	im=Image.open(word)
-	im.thumbnail((450,200))
-	new_im.paste(im, (index,0))
-	index += 450
-	
-	next = input('Continue?(1 for yes, 0 for no): ')
-	if(next == '0'):
-		continuex = False
-	
-new_im.save('Test.png')
-
-
-#WORKING
-#opens an image:
-#im = Image.open("Test1.png")
-#creates a new empty image, RGB mode, and size 400 by 400.
-#new_im = Image.new('RGB', (400,400))
-
-#Here I resize my opened image, so it is no bigger than 100,100
-#im.thumbnail((100,100))
-#Iterate through a 4 by 4 grid with 100 spacing, to place my image
-#for i in range(0,500,100):
-#    for j in range(0,500,100):
-#        #I change brightness of the images, just to emphasise they are unique copies.
-#        im=Image.eval(im,lambda x: x+(i+j)/30)
-#        #paste the image at location i,j:
-#        new_im.paste(im, (i,j))
-
-#new_im.show()
-
-
-
-	
+new_im.save(filename)
+os.system(filename)
 
